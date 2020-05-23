@@ -153,10 +153,9 @@ nav ul li.btn span {
 nav ul li.btn span.show:before {
     content: '\f00d';
 }
-
-
 /*end header*/
 
+/*star main*/
 .titulo {
     text-transform: uppercase;
     text-align: left;
@@ -273,10 +272,9 @@ nav ul li.btn span.show:before {
     transform: translateY(-10px);
     box-shadow: 0px 45px 60px 0px rgba(0, 0, 0, 0.087);
 }
-
+/*end main*/
 
 /*start footer*/
-
 footer {
     margin-top: 50px;
     background: #f1f1f1;
@@ -309,14 +307,14 @@ footer {
 .social-media a:hover {
     color: #fca210;
 }
-
-
 /*end footer*/
 
+/*start responsive header*/
 @media screen and (max-width: 1052px) {
     nav {
         padding: 10px 40px 10px 0px;
         z-index: 1;
+        position: fixed;
     }
     nav ul li.logo {
         display: none;
@@ -332,6 +330,7 @@ footer {
     }
     nav {
         padding: 9px 40px 9px 0;
+        position: fixed;
     }
     nav ul div.items {
         z-index: 1;
@@ -363,6 +362,9 @@ footer {
 }
 
 @media screen and (max-width: 446px) {
+    nav{
+      position: fixed;
+    }
     nav ul {
         flex-wrap: nowrap;
     }
@@ -379,20 +381,22 @@ footer {
 
 
 /*start responsive main*/
-
+@media screen and (max-width: 980px){
+    .contenedor{
+      grid-template-columns: repeat(3, minmax(170px, 300px));
+      margin: 50px 30px;
+    }
+}
 @media screen and (max-width: 720px) {
     .contenedor {
         grid-template-columns: 1fr;
         margin: 50px 30px;
     }
 }
-
-
 /*end responsive main*/
 
 
 /*start responsive footer*/
-
 @media screen and (max-width:960px) {
     .footer-container {
         max-width: 600px;
@@ -407,5 +411,4 @@ footer {
         text-align: center;
     }
 }
-
 /*end responsive footer*/
