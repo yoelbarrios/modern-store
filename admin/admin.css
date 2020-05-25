@@ -1,0 +1,10 @@
+.titulo {
+    text-align: center;
+    font-size: 50px;
+}
+
+.formulario {
+    max-width: 700px;
+    width: 100%;
+    margin: 50px auto 0px auto;
+}
