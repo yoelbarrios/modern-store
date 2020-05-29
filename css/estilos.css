@@ -40,6 +40,8 @@ nav {
     border-left: none;
     border-right: none;
     box-shadow: 0px 2px 40px 0px rgba(0, 0, 0, 0.091);
+    display: flex;
+    width: 100%;
 }
 
 nav ul {
@@ -135,7 +137,7 @@ nav ul .search-icon .icon span {
 nav ul li.btn {
     font-size: 29px;
     flex: 1;
-    padding: 0 40px;
+    padding: 0 15% 0 0;
     display: none;
 }
 
@@ -153,20 +155,22 @@ nav ul li.btn span {
 nav ul li.btn span.show:before {
     content: '\f00d';
 }
+
+
 /*end header*/
 
+
 /*star main*/
+
 .titulo {
     text-transform: uppercase;
     text-align: left;
 }
 
 .main {
-
     width: 100%;
     padding-top: 20px;
     z-index: 0;
-
 }
 
 .contenedor {
@@ -237,8 +241,9 @@ nav ul li.btn span.show:before {
     float: right;
     cursor: pointer;
 }
-.carrito span{
-  font-size: 19px;
+
+.carrito span {
+    font-size: 19px;
 }
 
 .card-footer {
@@ -272,9 +277,13 @@ nav ul li.btn span.show:before {
     transform: translateY(-10px);
     box-shadow: 0px 45px 60px 0px rgba(0, 0, 0, 0.087);
 }
+
+
 /*end main*/
 
+
 /*start footer*/
+
 footer {
     margin-top: 50px;
     background: #f1f1f1;
@@ -307,10 +316,14 @@ footer {
 .social-media a:hover {
     color: #fca210;
 }
+
+
 /*end footer*/
 
+
 /*start responsive header*/
-@media screen and (max-width: 1052px) {
+
+@media screen and (max-width: 1024px) {
     nav {
         padding: 10px 40px 10px 0px;
         z-index: 1;
@@ -326,7 +339,7 @@ footer {
 
 @media screen and (max-width: 860px) {
     nav ul li.btn {
-        display: block;
+        display: flex;
     }
     nav {
         padding: 9px 40px 9px 0;
@@ -362,8 +375,8 @@ footer {
 }
 
 @media screen and (max-width: 446px) {
-    nav{
-      position: fixed;
+    nav {
+        position: fixed;
     }
     nav ul {
         flex-wrap: nowrap;
@@ -381,23 +394,35 @@ footer {
 
 
 /*start responsive main*/
-@media screen and (max-width: 980px){
-    .contenedor{
-      grid-template-columns: repeat(3, minmax(170px, 300px));
-      margin: 50px 30px;
+
+@media screen and (max-width: 1024px) {
+    .contenedor {
+        grid-template-columns: repeat(3, minmax(170px, 300px));
+        margin: 50px 30px;
     }
 }
-@media screen and (max-width: 720px) {
+
+@media screen and (max-width: 950px) {
+    .contenedor {
+        grid-template-columns: repeat(2, minmax(170px, 300px));
+        margin: 50px 30px;
+    }
+}
+
+@media screen and (max-width: 650px) {
     .contenedor {
         grid-template-columns: 1fr;
         margin: 50px 30px;
     }
 }
+
+
 /*end responsive main*/
 
 
 /*start responsive footer*/
-@media screen and (max-width:960px) {
+
+@media screen and (max-width:950px) {
     .footer-container {
         max-width: 600px;
     }
@@ -411,4 +436,6 @@ footer {
         text-align: center;
     }
 }
+
+
 /*end responsive footer*/
