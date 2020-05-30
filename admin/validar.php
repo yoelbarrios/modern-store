@@ -7,7 +7,8 @@
     }
     
     if(isset($_SESSION['administrador'])){
-        echo "hola ".$_SESSION['administrador']." bienvenido";
+        echo "hola ".$_SESSION['administrador']."<br><br>";
+        echo "<a href='categorias/formcategorias.php'>añadir/modificar/eliminar categorias</a>";
     }else{
         header('location: index.html');
     }
