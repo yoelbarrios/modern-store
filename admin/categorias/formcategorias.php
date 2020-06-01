@@ -20,21 +20,33 @@
 </head>
 
 <body>
-    <?php
-    if(isset($_GET['validado'])){
-    ?>
+<?php
+  if(isset($_GET['validado'])){
+      if($_GET['validado']==1){
+?>
     <!--start alert de agregar fade show-->
     <div class="alert alert-success alert-dismissible " role="alert">
-        <p class="centrar"><strong>Bien!</strong> la categoria se agrego correctamente.</p>
+        <p class="centrar"><strong>Bien!</strong> la categoria <strong><?php echo $_GET['alert'];?></strong> se agrego correctamente.</p>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
     <!--end alert-->
-    <?php
+<?php
+      } else if($_GET['validado']==2){
+?>
+        <!--start alerta 2-->
+        <div class="alert alert-danger alert-dismissible " role="alert">
+            <p class="centrar"><strong>Advertencia!</strong> no se puede insertar un campo vacio.</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <!--end alerta 2-->
+<?php
+        }
     }
-    ?>
-
+?>
     <div class="titulo">Agregar Categoria</div>
     <div class="formulario">
         <form class="form-horizontal" method="POST" action="agregarcategorias.php">
@@ -56,7 +68,7 @@
     <div class="mostrarcategorias">
     <?php
         include('../../php/conexion.php');
-        $registros=mysqli_query($link,"select * from categorias");
+        $registros=mysqli_query($link,"select id, categoria from categorias order by id desc");
         cerrarconexion();
     ?>
         <table class="table table-hover">
@@ -66,6 +78,8 @@
         ?>
         <tr class="active">
         <td><?php echo $fila['categoria']; ?></td>
+        <td><a href="#"><button type="button" class="btn btn-success">Editar</button></a></td>
+        <td><a href="#"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
         </tr>
         <?php
             }
