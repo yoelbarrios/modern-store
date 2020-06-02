@@ -1,3 +1,9 @@
+<?php
+    session_start();
+?>
+<?php
+if(isset($_SESSION['administrador'])){
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -44,7 +50,18 @@
         </div>
         <!--end alerta 2-->
 <?php
-        }
+      }else if($_GET['validado']==3){
+?>
+        <!--start alerta 3-->
+        <div class="alert alert-danger alert-dismissible " role="alert">
+            <p class="centrar"><strong>Advertencia!</strong> la categoria <strong><?php echo $_GET['alert'];?></strong> ya existe.</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <!--end alerta 3-->
+<?php
+      }
     }
 ?>
     <div class="titulo">Agregar Categoria</div>
@@ -92,3 +109,8 @@
 </body>
 
 </html>
+<?php
+} else{
+    header('location: ../index.html');
+}
+?>

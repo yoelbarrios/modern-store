@@ -155,8 +155,30 @@ nav ul li.btn span {
 nav ul li.btn span.show:before {
     content: '\f00d';
 }
+/* start para desplegar las opciones*/
 
+.items li ul{
+  display:none;
 
+}
+.items li ul li a{
+  color: orange;
+
+}
+.items li:hover>ul{
+  display:block;
+  position: absolute;
+  background-color: gray;
+  color: orange;
+  padding: 10px;
+  z-index: 2;
+}
+.items li:hover>ul li a:hover{
+  background: tomato;
+  color: white;
+  cursor: pointer;
+}
+/* end para desplegar las opciones*/
 /*end header*/
 
 

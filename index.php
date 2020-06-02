@@ -1,3 +1,8 @@
+<?php
+    include('php/conexion.php');
+    $registros=mysqli_query($link,"select id, categoria from categorias order by categoria asc");
+    cerrarconexion();
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -34,7 +39,18 @@
         <li class="btn"><span class="fas fa-bars"></span></li>
         <div class="items">
           <li><a href="#"><span class="lnr lnr-home"></span>Inicio</a></li>
-          <li><a href="#"><span class="lnr lnr-briefcase"></span>Productos</a></li>
+          <li><a href="#"><span class="lnr lnr-briefcase"></span>Productos</a>
+            <ul>
+              <?php
+                while($fila=mysqli_fetch_array($registros)){
+                  //echo utf8_encode($fila['categoria']); sirve para mostrar las tildes
+              ?>
+                <li> <a href="#"><?php echo $fila['categoria']; ?></a></li>
+              <?php
+                }
+              ?>
+            </ul>
+          </li>
           <li><a href="#"><span class="lnr lnr-rocket"></span>Cuenta</a></li>
           <li><a href="#"><span class="lnr lnr-users"></span>Contacto</a></li>
         </div>
