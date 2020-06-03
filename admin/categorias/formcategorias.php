@@ -61,6 +61,17 @@ if(isset($_SESSION['administrador'])){
         </div>
         <!--end alerta 3-->
 <?php
+      }else if($_GET['validado']==4){
+?>
+        <!--start alerta 4-->
+        <div class="alert alert-success alert-dismissible " role="alert">
+            <p class="centrar"><strong>Bien!</strong> la categoria <strong><?php echo $_GET['alert'];?></strong> se actualizado correctamente por <strong><?php echo $_GET['categorianueva'];?></strong></p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <!--end alerta 4-->
+<?php
       }
     }
 ?>
@@ -95,7 +106,7 @@ if(isset($_SESSION['administrador'])){
         ?>
         <tr class="active">
         <td><?php echo $fila['categoria']; ?></td>
-        <td><a href="#"><button type="button" class="btn btn-success">Editar</button></a></td>
+        <td><a href="formeditarcategorias.php?categoriavieja=<?php echo $fila['categoria']; ?>"><button type="button" class="btn btn-success">Editar</button></a></td>
         <td><a href="#"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
         </tr>
         <?php
