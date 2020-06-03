@@ -22,7 +22,6 @@ if(isset($_SESSION['administrador'])){
 
     <script src="../../js/bootstrap.min.js"></script>
     <!--end bootstrap-->
-
 </head>
 
 <body>
@@ -45,8 +44,6 @@ if(isset($_SESSION['administrador'])){
             </div>
         </form>
     </div>
-
-
 
 </body>
 

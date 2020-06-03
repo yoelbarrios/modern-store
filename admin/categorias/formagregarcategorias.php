@@ -27,19 +27,24 @@ if(isset($_SESSION['administrador'])){
 
 <body>
 <?php
-  if(isset($_GET['validado'])){
-      if($_GET['validado']==1){
+
+  if(isset($_GET['alert'])){
+      $alert = $_GET['alert'];
+
+      switch($alert){
+        case 1:
 ?>
     <!--start alert de agregar fade show-->
     <div class="alert alert-success alert-dismissible " role="alert">
-        <p class="centrar"><strong>Bien!</strong> la categoria <strong><?php echo $_GET['alert'];?></strong> se agrego correctamente.</p>
+        <p class="centrar"><strong>Bien!</strong> la categoria <strong><?php echo $_GET['categoria'];?></strong> se agrego correctamente.</p>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
     <!--end alert-->
 <?php
-      } else if($_GET['validado']==2){
+      break;
+      case 2:
 ?>
         <!--start alerta 2-->
         <div class="alert alert-danger alert-dismissible " role="alert">
@@ -50,27 +55,41 @@ if(isset($_SESSION['administrador'])){
         </div>
         <!--end alerta 2-->
 <?php
-      }else if($_GET['validado']==3){
+      break;
+      case 3:
 ?>
         <!--start alerta 3-->
         <div class="alert alert-danger alert-dismissible " role="alert">
-            <p class="centrar"><strong>Advertencia!</strong> la categoria <strong><?php echo $_GET['alert'];?></strong> ya existe.</p>
+            <p class="centrar"><strong>Advertencia!</strong> la categoria <strong><?php echo $_GET['categoria'];?></strong> ya existe.</p>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <!--end alerta 3-->
 <?php
-      }else if($_GET['validado']==4){
+      break;
+      case 4:
 ?>
         <!--start alerta 4-->
         <div class="alert alert-success alert-dismissible " role="alert">
-            <p class="centrar"><strong>Bien!</strong> la categoria <strong><?php echo $_GET['alert'];?></strong> se actualizado correctamente por <strong><?php echo $_GET['categorianueva'];?></strong></p>
+            <p class="centrar"><strong>Bien!</strong> la categoria <strong><?php echo $_GET['categoriavieja'];?></strong> se actualizado correctamente por <strong><?php echo $_GET['categorianueva'];?></strong></p>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <!--end alerta 4-->
+<?php
+      break;
+      case 5:
+?>
+        <!--start alerta 5-->
+        <div class="alert alert-danger alert-dismissible " role="alert">
+            <p class="centrar"><strong>Advertencia!</strong> no ha actualizado ninguna categoria. </p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <!--end alerta 5-->
 <?php
       }
     }
