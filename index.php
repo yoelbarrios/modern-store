@@ -65,8 +65,7 @@
   </header>
   <!--end header-->
 
-<!-- start slider -->
-
+  <!-- start slider -->
   <section class="slider-contenedor">
         <div class="miSlider animacion">
             <img src="img/slide1.jpg" alt="">
@@ -86,10 +85,9 @@
             <span class="barra" onclick="posicionSlide(2)"></span>
             <span class="barra" onclick="posicionSlide(3)"></span>
         </div>
-    </section>
+  </section>
+  <!-- end slider -->
 
-
-<!-- end slider -->
   <!--start main-->
   <section class='main'>
     <!--contenedor principal-->

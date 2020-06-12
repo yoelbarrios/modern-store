@@ -6,8 +6,6 @@ body {
     color: #333333;
 }
 
-
-
 /*
 .header {
     z-index: 99999;
@@ -24,19 +22,14 @@ body {
     font-weight: 100;
     text-transform: uppercase;
     letter-spacing: 0.3em;*/
-
-
 /*para que la cabecera sea fija*/
-
-
 /*  position: fixed;
 } */
 
 
 /*start header*/
-
 nav {
-    background: #fff;
+    background: #35383f;
     padding: 10px 40px 10px 70px;
     border-left: none;
     border-right: none;
@@ -45,7 +38,6 @@ nav {
     width: 100%;
     position: fixed;
     z-index: 1;
-
 }
 
 nav ul {
@@ -73,9 +65,7 @@ nav ul div.items {
     display: inline-flex;
 }
 
-
 /*separacion de los icos de la letra*/
-
 nav ul div.items span {
     margin-right: 10px;
     color: #fca210;
@@ -85,20 +75,14 @@ nav ul div.items a {
     text-decoration: none;
     font-size: 18px;
     padding: 0 15px;
-    color: #333333;
+    color: #fff;
 }
-/*
-nav ul div.items span:hover {
-    color: #fca210;
-} */
-
 nav ul div.items a:hover {
     color: #fca210;
     background: rgba(243, 156, 18, 0.2);
     border-radius: 50px;
-    padding: 1.5px 15px;
+    padding: 3.5px 15px;
 }
-
 nav ul .search-icon {
     height: 40px;
     width: 240px;
@@ -108,7 +92,6 @@ nav ul .search-icon {
     border-radius: 5px;
     border: solid 1px #cecece !important;
 }
-
 nav ul .search-icon input {
     height: 100%;
     width: 200px;
@@ -125,6 +108,7 @@ nav ul .search-icon .icon {
     width: 40px;
     line-height: 40px;
     text-align: center;
+    background: #fca210;
     /*border: 1px solid #cccccc;*/
     border-radius: 0 5px 5px 0;
     cursor: pointer;
@@ -135,8 +119,11 @@ nav ul .search-icon .icon:hover {
 }
 
 nav ul .search-icon .icon span {
-    color: #333333;
+    color: #fff;
     font-size: 18px;
+}
+nav ul .search-icon .icon span:hover {
+    color: #fca210;
 }
 
 nav ul li.btn {
@@ -149,45 +136,48 @@ nav ul li.btn {
 nav ul li.btn span {
     height: 42px;
     width: 42px;
+
     text-align: center;
     line-height: 42px;
     border: 1px solid #cecece;
     border-radius: 5px;
     cursor: pointer;
-    color: #333333;
+    color: #fff;
 }
 
 nav ul li.btn span.show:before {
     content: '\f00d';
 }
-/* start para desplegar las opciones*/
 
+/* start para desplegar las opciones productos*/
 .items li ul{
   display:none;
-
 }
 .items li ul li a{
-  color: orange;
+  color: #567;
 
 }
 .items li:hover>ul{
   display:block;
   position: absolute;
-  background-color: gray;
-  color: orange;
+  background-color: #fff;
   padding: 10px;
+  box-shadow: 10px 15px 20px 10px rgba(0, 0, 0, 0.057);
   z-index: 2;
 }
-.items li:hover>ul li a:hover{
-  background: tomato;
-  color: white;
+.items li:hover>ul li:hover{
+  background: #fca210;
   cursor: pointer;
+}
+.items li:hover>ul li a:hover{
+  cursor: pointer;
+  color: #567;
 }
 /* end para desplegar las opciones*/
 /*end header*/
 
-/* start slider*/
 
+/* start slider*/
 .slider-contenedor {
     max-width: 100%;
     max-height: 100vh;
@@ -197,7 +187,6 @@ nav ul li.btn span.show:before {
     overflow: hidden;
     margin: auto;
     padding-top: 80px;
-
 }
 
 .miSlider img {
@@ -393,13 +382,10 @@ nav ul li.btn span.show:before {
     transform: translateY(-10px);
     box-shadow: 0px 45px 60px 0px rgba(0, 0, 0, 0.087);
 }
-
-
 /*end main*/
 
 
 /*start footer*/
-
 footer {
     margin-top: 50px;
     background: #f1f1f1;
@@ -432,13 +418,10 @@ footer {
 .social-media a:hover {
     color: #fca210;
 }
-
-
 /*end footer*/
 
 
 /*start responsive header*/
-
 @media screen and (max-width: 1024px) {
     nav {
         padding: 10px 40px 10px 0px;
@@ -483,10 +466,17 @@ footer {
     }
     nav ul div.items li a {
         font-size: 19px;
-        color: white;
+        color: #fff;
     }
     nav ul div.items li span {
-        color: white;
+        color: #fff;
+    }
+    .items li:hover>ul{
+      background: rgba(0, 0, 0, 0.8);
+
+    }
+    nav ul div.items li:hover>ul li {
+        margin: 10px 0;
     }
 }
 
@@ -576,6 +566,4 @@ footer {
         text-align: center;
     }
 }
-
-
 /*end responsive footer*/
