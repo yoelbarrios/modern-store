@@ -65,10 +65,69 @@
   </header>
   <!--end header-->
 
+<!-- start slider -->
+
+  <section class="slider-contenedor">
+        <div class="miSlider animacion">
+            <img src="img/slide1.jpg" alt="">
+        </div>
+        <div class="miSlider animacion">
+            <img src="img/slide2.jpg" alt="">
+        </div>
+        <div class="miSlider animacion">
+            <img src="img/slide3.jpg" alt="">
+        </div>
+        <div class="direcciones">
+            <a href="#" class="anterior" onclick="avanzaSlide(-1)">&#10094;</a>
+            <a href="#" class="siguiente" onclick="avanzaSlide(1)">&#10095;</a>
+        </div>
+        <div class="barras">
+            <span class="barra active" onclick="posicionSlide(1)"></span>
+            <span class="barra" onclick="posicionSlide(2)"></span>
+            <span class="barra" onclick="posicionSlide(3)"></span>
+        </div>
+    </section>
+
+
+<!-- end slider -->
   <!--start main-->
   <section class='main'>
     <!--contenedor principal-->
     <div class='contenedor'>
+      <!-- start targeta de producto -->
+      <div class='card'>
+        <div class='card-contenido'>
+          <div class='top-bar'>
+            <span>
+              $12.95
+            </span>
+            <span class='float-right lnr lnr-heart'></span>
+          </div>
+          <div class='imagen'>
+            <img class="img-imagen" src='https://i.blogs.es/385ce7/mando-p4/450_1000.jpg'>
+          </div>
+        </div>
+        <div class='card-descripcion'>
+          <div class='titulo'>
+            BEATS HEADPHONE
+          </div>
+          <div class='carrito'>
+            <span class='lnr lnr-cart'></span>
+          </div>
+        </div>
+        <div class='card-footer'>
+          <div class='span'>
+            RED
+          </div>
+          <div class='span'>
+            BEATS
+          </div>
+          <div class='span'>
+            HEADPHONE
+          </div>
+        </div>
+      </div>
+      <!-- end targeta de producto -->
 
       <!--targeta de producto-->
       <div class='card'>
@@ -148,7 +207,7 @@
             <span class='float-right lnr lnr-heart'></span>
           </div>
           <div class='imagen'>
-            <img class="img-imagen" src='https://i.pinimg.com/736x/05/58/c7/0558c796ee706b5cb289ffb68e3b509c--is-the-best-to-the.jpg'>
+            <img class="img-imagen" src='https://www.masgamers.com/wp-content/uploads/2019/03/1.-ROG-Zephyrus-S.jpg'>
           </div>
         </div>
         <div class='card-descripcion'>
@@ -182,7 +241,7 @@
             <span class='float-right lnr lnr-heart'></span>
           </div>
           <div class='imagen'>
-            <img class="img-imagen" src='https://www.grootgadgets.com/wp-content/uploads/2017/03/Canon-70-200mm-Lens-mug-White-replica-groot-gadgets-1-400x400.jpg'>
+            <img class="img-imagen" src='https://img.tecnomagazine.net/2017/01/razer.jpg'>
           </div>
         </div>
         <div class='card-descripcion'>
@@ -275,6 +334,74 @@
         </div>
       </div>
 
+      <!--targeta de producto-->
+      <div class='card'>
+        <div class='card-contenido'>
+          <div class='top-bar'>
+            <span>
+              $5.95
+            </span>
+            <span class='float-right lnr lnr-heart'></span>
+          </div>
+          <div class='imagen'>
+            <img class="img-imagen" src='https://as.com/meristation/imagenes/2020/02/10/noticias/1581347400_144086_1581347453_noticia_normal.jpg'>
+          </div>
+        </div>
+        <div class='card-descripcion'>
+          <div class='titulo'>
+            Black Shoes
+          </div>
+          <div class='carrito'>
+            <span class='lnr lnr-cart'></span>
+          </div>
+        </div>
+        <div class='card-footer'>
+          <div class='span'>
+            SHOES
+          </div>
+          <div class='span'>
+            FORMAL
+          </div>
+          <div class='span'>
+            LEATHER
+          </div>
+        </div>
+      </div>
+
+      <!--targeta de producto-->
+      <div class='card'>
+        <div class='card-contenido'>
+          <div class='top-bar'>
+            <span>
+              $5.95
+            </span>
+            <span class='float-right lnr lnr-heart'></span>
+          </div>
+          <div class='imagen'>
+            <img class="img-imagen" src='https://elchapuzasinformatico.com/wp-content/uploads/2019/04/iPad-Pro.jpg'>
+          </div>
+        </div>
+        <div class='card-descripcion'>
+          <div class='titulo'>
+            Black Shoes
+          </div>
+          <div class='carrito'>
+            <span class='lnr lnr-cart'></span>
+          </div>
+        </div>
+        <div class='card-footer'>
+          <div class='span'>
+            SHOES
+          </div>
+          <div class='span'>
+            FORMAL
+          </div>
+          <div class='span'>
+            LEATHER
+          </div>
+        </div>
+      </div>
+
 
     </div>
   </section>
@@ -301,8 +428,7 @@
     </div>
   </footer>
   <!--end footer-->
-
-
+  <script src="js/slider.js"></script>
 </body>
 
 </html>

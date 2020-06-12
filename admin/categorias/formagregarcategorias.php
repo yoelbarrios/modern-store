@@ -23,6 +23,9 @@ if(isset($_SESSION['administrador'])){
     <script src="../../js/bootstrap.min.js"></script>
     <!--end bootstrap-->
 
+    <!--funcion js para confirmar eliminarcategorias-->
+    <script type="text/javascript" src="eliminarcategorias.js"></script>
+
 </head>
 
 <body>
@@ -123,10 +126,10 @@ if(isset($_SESSION['administrador'])){
             //ciclo para listar
             while($fila=mysqli_fetch_array($registros)){
         ?>
-        <tr class="active">
+        <tr class="active" id="<?php echo $fila['id']; ?>">
         <td><?php echo $fila['categoria']; ?></td>
         <td><a href="formeditarcategorias.php?categoriavieja=<?php echo $fila['categoria']; ?>"><button type="button" class="btn btn-success">Editar</button></a></td>
-        <td><a href="#"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
+        <td><a onclick="eliminar('<?php echo $fila['id']; ?>')"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
         </tr>
         <?php
             }
