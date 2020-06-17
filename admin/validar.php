@@ -8,7 +8,8 @@
 
     if(isset($_SESSION['administrador'])){
         //echo "hola ".$_SESSION['administrador']."<br><br>";
-        echo "<a href='categorias/formagregarcategorias.php'>añadir/modificar/eliminar categorias</a>";
+        echo "<a href='categorias/formagregarcategorias.php'>agregar/modificar/eliminar categorias</a><br>";
+        echo "<a href='productos/formagregarproductos.php'>agregar/modificar/eliminar productos</a>";
     }else{
         header('location: index.html');
     }
