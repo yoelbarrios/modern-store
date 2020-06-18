@@ -1,7 +1,8 @@
 <?php
 session_start();
 include('../../php/conexion.php');
-if (isset($_SESSION['administrador'])) {
+if (isset($_SESSION['administrador']) && isset($_POST['nombre'])) {
+  sleep(2);//para esperar 2 segundos antes de ejecutar el codigo
   $nombre=$_POST['nombre'];
   $precio = $_POST['precio'];
   $descripcion = $_POST['descripcion'];

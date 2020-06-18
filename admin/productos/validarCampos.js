@@ -2,7 +2,7 @@ function validarformulario(){
     //nombre producto
     if(document.formproductos.nombre.value==""){
       //mostrar alertaz
-      $('#avisoproducto').show('fast');
+      $('#avisonombre').show('fast');
       document.formproductos.nombre.style.border='1px solid red';
     }
     //precio
@@ -39,15 +39,21 @@ function validarformulario(){
           descripcion:descripcion,
           categoria:categoria
         },
-        success:function(resp){
+
+        beforeSend:function(){
           $("#nombrerepetido").hide('fast');
           $("#exito").hide('fast');
+          $('#cargando').show('fast');
+        },
 
+        success:function(resp){
           if(resp=="exito"){
+            $('#cargando').hide('fast');
             $("#nombrerepetido").hide('fast');
             $("#exito").show('slow');
           }
           if(resp=="nombrerepetido"){
+            $('#cargando').hide('fast');
             $("#exito").hide('fast');
             $("#nombrerepetido").show('slow');
             document.formproductos.nombre.style.border='1px solid red';
@@ -60,7 +66,7 @@ function validarformulario(){
 function validarnombre(){
   //ocultar alerta
   $('#avisonombre').hide('slow');
-  document.formproductos.producto.style.border='1px solid green';
+  document.formproductos.nombre.style.border='1px solid green';
 }
 function validarprecio(){
   //ocultar alerta

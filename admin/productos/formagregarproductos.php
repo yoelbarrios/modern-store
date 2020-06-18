@@ -112,6 +112,10 @@ if(isset($_SESSION['administrador'])){
           <!--end alerta categoria -->
   <!-- end campro categoria -->
 
+          <!-- cargando -->
+          <center> <img class="ocultar" src="../../img/loading-65.gif" alt="cargando" id="cargando"></center>
+          <!-- cargando -->
+
           <!--start alert exito al agregar-->
           <div class="alert alert-success alert-dismissible ocultar" role="alert" id="exito">
               <p class="centrar"><strong>Bien!</strong> el producto se agrego correctamente.</p>
