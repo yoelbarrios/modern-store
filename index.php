@@ -32,11 +32,17 @@
 
 <body>
   <!--start header-->
-  <header>
+  <header class="header">
     <nav>
       <ul>
-        <li class="logo"><img src="img/logo.png" alt=""></li>
+        <li class="logo"><a href="#"><strong>YoeL</strong>Code</a> </li>
         <li class="btn"><span class="fas fa-bars"></span></li>
+          <li class="search-icon">
+          <input type="search" placeholder="Buscar Producto">
+          <label class="icon">
+            <span class="fas fa-search"></span>
+          </label>
+        </li>
         <div class="items">
           <li><a href="#"><span class="lnr lnr-home"></span>Inicio</a></li>
           <li><a href="#"><span class="lnr lnr-briefcase"></span>Productos</a>
@@ -54,12 +60,7 @@
           <li><a href="#"><span class="lnr lnr-rocket"></span>Cuenta</a></li>
           <li><a href="#"><span class="lnr lnr-users"></span>Contacto</a></li>
         </div>
-        <li class="search-icon">
-          <input type="search" placeholder="Buscar Producto">
-          <label class="icon">
-            <span class="fas fa-search"></span>
-          </label>
-        </li>
+
       </ul>
     </nav>
   </header>

@@ -17,6 +17,7 @@
 </head>
 
 <body>
+  <!--
     <div class="titulo">Administración</div>
     <div class="formulario">
         <form class="form-horizontal" method="POST" action="validar.php">
@@ -48,6 +49,21 @@
             </div>
         </form>
     </div>
+    -->
+    <section class="login">
+        <form action="validar.php" class="login-form" method="POST">
+            <p class="log">Administración</p>
+
+            <div class="input-txt">
+                <input type="text" placeholder="Nombre" name="nombre">
+            </div>
+
+            <div class="input-txt">
+                <input type="password" placeholder="Password" name="password">
+            </div>
+            <input type="submit" class="logbtn" value="Ingresar">
+        </form>
+    </section>
 </body>
 
 </html>
