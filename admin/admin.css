@@ -81,3 +81,13 @@
 .ocultar{
   display: none;
 }
+.add-imagen{
+  margin-left: 40px;
+  margin-top: 20px;
+display: none;
+}
+.btn-imagenes{
+  margin-left: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

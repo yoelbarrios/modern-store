@@ -25,6 +25,9 @@ function validarformulario(){
     }
     if(document.formproductos.nombre.value!="" && document.formproductos.precio.value!="" &&
     document.formproductos.descripcion.value!="" && document.formproductos.categoria.value!=""){
+
+      var formData = new FormData($("#form")[0]);
+
       var nombre= document.formproductos.nombre.value;
       var precio= document.formproductos.precio.value;
       var descripcion= document.formproductos.descripcion.value;
@@ -33,14 +36,13 @@ function validarformulario(){
       $.ajax({
         type: "POST",
         url:"agregarproductos.php",
-        data: {
-          nombre:nombre,
-          precio:precio,
-          descripcion:descripcion,
-          categoria:categoria
-        },
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false,
 
         beforeSend:function(){
+          $("#errorimagen").hide('fast');
           $("#nombrerepetido").hide('fast');
           $("#exito").hide('fast');
           $('#cargando').show('fast');
@@ -57,6 +59,13 @@ function validarformulario(){
             $("#exito").hide('fast');
             $("#nombrerepetido").show('slow');
             document.formproductos.nombre.style.border='1px solid red';
+          }
+          if(resp=="errorimagen"){
+            $('#cargando').hide('fast');
+            $("#exito").hide('fast');
+            $("#nombrerepetido").hide('fast');
+            $("#errorimagen").show('slow');
+
           }
         }
       });
@@ -79,3 +88,8 @@ function validardescripcion(){
   document.formproductos.descripcion.style.border='1px solid green';
 }
 //end zona de exito al validar
+//start mostrar los campos para agregar las imagenes
+function mostrar(){
+  $("#imagenes").show("fast");
+}
+//end mostrar los campos para agregar las imagenes

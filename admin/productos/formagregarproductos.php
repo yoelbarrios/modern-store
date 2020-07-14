@@ -34,7 +34,7 @@ if(isset($_SESSION['administrador'])){
 <body>
   <div class="titulo">Agregar Productos</div>
   <div class="formulario">
-      <form class="form-horizontal" name="formproductos" method="POST" >
+      <form class="form-horizontal" name="formproductos" method="POST" enctype="multipart/form-data" id="form">
   <!-- start campo producto -->
           <div class="form-group">
               <label for="inputEmail3" class="col-sm-2 control-label">Producto</label>
@@ -111,6 +111,27 @@ if(isset($_SESSION['administrador'])){
           </div>
           <!--end alerta categoria -->
   <!-- end campro categoria -->
+  <!-- start campo imagenes -->
+        <div class="btn-imagenes">
+          <button onclick="mostrar()" type="button" class="btn btn-success">Agregar alguna imagen</button>
+        </div>
+        <div class="add-imagen" id="imagenes">
+          <div class="form-group">
+            <label >Imagen 1 (principal)</label>
+            <input type="file" name="imagen1">
+          </div>
+          <div class="form-group">
+            <label >Imagen 2</label>
+            <input type="file" name="imagen2">
+          </div>
+          <div class="form-group">
+            <label >Imagen 3</label>
+            <input type="file" name="imagen3">
+            <p class="help-block">Solo se admiten archivos .jpg, .jpeg, .gif y .png menores de 1MByte</p>
+          </div>
+        </div>
+
+  <!-- end campo imagenes -->
 
           <!-- cargando -->
           <center> <img class="ocultar" src="../../img/loading-65.gif" alt="cargando" id="cargando"></center>
@@ -133,6 +154,14 @@ if(isset($_SESSION['administrador'])){
               </button>
           </div>
           <!--end alert nombre repetido-->
+          <!--start alert error imagen-->
+          <div class="alert alert-danger alert-dismissible ocultar" role="alert" id="errorimagen">
+              <p class="centrar"><strong>Advertencia!</strong> Formato de imagen no permitido</p>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <!--end alert error imagen-->
           <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
                   <button type="button" onclick="validarformulario()" class="btn btn-success">Agregar</button>
