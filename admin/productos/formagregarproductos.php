@@ -134,7 +134,7 @@ if(isset($_SESSION['administrador'])){
   <!-- end campo imagenes -->
 
           <!-- cargando -->
-          <center> <img class="ocultar" src="../../img/loading-65.gif" alt="cargando" id="cargando"></center>
+          <center> <img class="ocultar" src="../../img/loading.gif" alt="cargando" id="cargando"></center>
           <!-- cargando -->
 
           <!--start alert exito al agregar-->

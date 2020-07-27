@@ -1,8 +1,8 @@
 <?php
-    include('php/conexion.php');
+    include('conexion.php');
     $registros1=mysqli_query($link,"select id, categoria from categorias order by categoria asc");
     //cerrarconexion();
-    $registros2=mysqli_query($link,"select id_producto,nombre, precio from productos where inicio=1");
+    $registros2=mysqli_query($link,"select id_producto,nombre, precio from productos where id_categoria='$_GET[id_categoria]'");
     //$registros2=mysqli_query($link,"select id_producto,nombre, precio from productos limit 0,12"); para limitar la cantidad de productos
 ?>
 <!DOCTYPE html>
@@ -11,14 +11,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tienda</title>
+  <title>Productos</title>
   <!--start estilos propios-->
-  <link rel="stylesheet" href="css/estilos.css">
-  <link rel="stylesheet" href="css/normalizar.css">
+  <link rel="stylesheet" href="../css/estilos.css">
+  <link rel="stylesheet" href="../css/normalizar.css">
   <!--start bootstrap-->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+  <script src="../js/bootstrap.min.js"></script>
   <!--end bootstrap-->
   <!--fuentes-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:200,400">
@@ -28,7 +28,7 @@
   <!--jquery-->
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <!--script header-->
-  <script type="text/javascript" src="js/header.js"></script>
+  <script type="text/javascript" src="../js/header.js"></script>
 
 </head>
 
@@ -46,14 +46,14 @@
           </label>
         </li>
         <div class="items">
-          <li><a href="#"><span class="lnr lnr-home"></span>Inicio</a></li>
+          <li><a href="../index.php"><span class="lnr lnr-home"></span>Inicio</a></li>
           <li><a href="#"><span class="lnr lnr-briefcase"></span>Productos</a>
             <ul>
               <?php
                 while($fila1=mysqli_fetch_assoc($registros1)){
                   //echo utf8_encode($fila['categoria']); sirve para mostrar las tildes
               ?>
-                <li> <a href="php/verproductos.php?id_categoria=<?php echo $fila1['id']; ?>"><?php echo $fila1['categoria']; ?></a></li>
+                <li> <a href="verproductos.php?id_categoria=<?php echo $fila1['id']; ?>"><?php echo $fila1['categoria']; ?></a></li>
               <?php
                 }
               ?>
@@ -68,31 +68,8 @@
   </header>
   <!--end header-->
 
-  <!-- start slider -->
-  <section class="slider-contenedor">
-        <div class="miSlider animacion">
-            <img src="img/slide1.jpg" alt="">
-        </div>
-        <div class="miSlider animacion">
-            <img src="img/slide2.jpg" alt="">
-        </div>
-        <div class="miSlider animacion">
-            <img src="img/slide3.jpg" alt="">
-        </div>
-        <div class="direcciones">
-            <a href="#" class="anterior" onclick="avanzaSlide(-1)">&#10094;</a>
-            <a href="#" class="siguiente" onclick="avanzaSlide(1)">&#10095;</a>
-        </div>
-        <div class="barras">
-            <span class="barra active" onclick="posicionSlide(1)"></span>
-            <span class="barra" onclick="posicionSlide(2)"></span>
-            <span class="barra" onclick="posicionSlide(3)"></span>
-        </div>
-  </section>
-  <!-- end slider -->
-
   <!--start main-->
-  <section class='main'>
+  <section class='verproductos-main'>
     <!--contenedor principal-->
     <div class='contenedor'>
       <?php
@@ -110,7 +87,7 @@
             <span class='float-right lnr lnr-heart'></span>
           </div>
           <div class='imagen'>
-            <img class="img-imagen" src='admin/productos/imagenes/<?php echo $fila3['nombre']; ?>'>
+            <img class="img-imagen" src='../admin/productos/imagenes/<?php echo $fila3['nombre']; ?>'>
           </div>
         </div>
         <div class='card-descripcion'>
@@ -163,7 +140,7 @@
     </div>
   </footer>
   <!--end footer-->
-  <script src="js/slider.js"></script>
+
 </body>
 
 </html>

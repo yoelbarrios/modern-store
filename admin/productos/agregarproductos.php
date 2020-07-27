@@ -13,10 +13,10 @@ if (isset($_SESSION['administrador']) && isset($_POST['nombre'])) {
 
       //start imagenes
       //imagen1
-      if($_FILES['imagen1']['size']!=0){
+      if($_FILES['imagen1']['name']!=""){
         $ext=explode(".",$_FILES['imagen1']['name']);
         $extension=end($ext);
-        $_FILES['imagen1']['name']=$nombre."_01.".$extension;
+        $_FILES['imagen1']['name']=time()."_01.".$extension;
 
         $permitidos= array("image/jpg", "image/jpeg", "image/gif","image/png");
         $limite_kb= 1000;
@@ -31,10 +31,10 @@ if (isset($_SESSION['administrador']) && isset($_POST['nombre'])) {
         }
       }
       //imagen2
-      if($_FILES['imagen2']['size']!=0){
+      if($_FILES['imagen2']['name']!=""){
         $ext=explode(".",$_FILES['imagen2']['name']);
         $extension=end($ext);
-        $_FILES['imagen2']['name']=$nombre."_02.".$extension;
+        $_FILES['imagen2']['name']=time()."_02.".$extension;
 
         $permitidos= array("image/jpg", "image/jpeg", "image/gif","image/png");
         $limite_kb= 1000;
@@ -49,10 +49,10 @@ if (isset($_SESSION['administrador']) && isset($_POST['nombre'])) {
         }
       }
       //imagen3
-      if($_FILES['imagen3']['size']!=0){
+      if($_FILES['imagen3']['name']!=""){
         $ext=explode(".",$_FILES['imagen3']['name']);
         $extension=end($ext);
-        $_FILES['imagen3']['name']=$nombre."_03.".$extension;
+        $_FILES['imagen3']['name']=time()."_03.".$extension;
 
         $permitidos= array("image/jpg", "image/jpeg", "image/gif","image/png");
         $limite_kb= 1000;
@@ -69,6 +69,21 @@ if (isset($_SESSION['administrador']) && isset($_POST['nombre'])) {
       //end imagenes
       mysqli_query($link,"insert into productos(nombre,precio,descripcion,id_categoria) values
      ('$nombre','$precio','$descripcion','$categoria')");
+
+     $registros=mysqli_query($link,"select id_producto from productos where nombre='$nombre'");
+     $fila=mysqli_fetch_array($registros);
+     if($_FILES['imagen1']['name']!=""){
+       $nombreimagen1=$_FILES['imagen1']['name'];
+       mysqli_query($link,"insert into imagenes (nombre, prioridad, id_producto) values ('$nombreimagen1','1','$fila[id_producto]')");
+     }
+     if($_FILES['imagen2']['name']!=""){
+       $nombreimagen2=$_FILES['imagen2']['name'];
+       mysqli_query($link,"insert into imagenes (nombre, prioridad, id_producto) values ('$nombreimagen2','2','$fila[id_producto]')");
+     }
+     if($_FILES['imagen3']['name']!=""){
+       $nombreimagen3=$_FILES['imagen3']['name'];
+       mysqli_query($link,"insert into imagenes (nombre, prioridad, id_producto) values ('$nombreimagen3','3','$fila[id_producto]')");
+     }
      cerrarconexion();
      echo "exito";
   } else {
