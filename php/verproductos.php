@@ -2,8 +2,15 @@
     include('conexion.php');
     $registros1=mysqli_query($link,"select id, categoria from categorias order by categoria asc");
     //cerrarconexion();
-    $registros2=mysqli_query($link,"select id_producto,nombre, precio from productos where id_categoria='$_GET[id_categoria]'");
+    if(isset($_GET['orden']) && $_GET['orden']=="mayormenor"){
+      $registros2=mysqli_query($link,"select id_producto,nombre, precio from productos where id_categoria='$_GET[id_categoria]' order by precio desc");
+    }else{
+      $registros2=mysqli_query($link,"select id_producto,nombre, precio from productos where id_categoria='$_GET[id_categoria]' order by precio asc");
+    }
+    
     //$registros2=mysqli_query($link,"select id_producto,nombre, precio from productos limit 0,12"); para limitar la cantidad de productos
+    $registros4=mysqli_query($link,"select categoria from categorias where id='$_GET[id_categoria]'");
+    $fila4 = mysqli_fetch_assoc($registros4);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -18,17 +25,19 @@
   <!--start bootstrap-->
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
-  <script src="../js/bootstrap.min.js"></script>
+  
   <!--end bootstrap-->
   <!--fuentes-->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:200,400">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400;500&display=swap" rel="stylesheet">
   <!--iconos-->
   <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
   <script src="https://kit.fontawesome.com/b478cabd51.js" crossorigin="anonymous"></script>
   <!--jquery-->
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
   <!--script header-->
   <script type="text/javascript" src="../js/header.js"></script>
+  <script src="../js/ordenar.js"></script>
 
 </head>
 
@@ -70,8 +79,19 @@
 
   <!--start main-->
   <section class='verproductos-main'>
+      <p> <?php echo $fila4['categoria']; ?> </p> 
+      <p>
+        <form name="form1">
+          <select onChange="fOrdenar('<?php echo $_GET['id_categoria']; ?>')" name="ordenar" class="form-control">
+            <option>Ordenar por...</option>
+            <option value="menormayor">Ordenar por precio de menor a mayor</option>
+            <option value="mayormenor">Ordenar por precio de mayor a menor</option>
+          </select>
+        </form>
+      </p>
     <!--contenedor principal-->
     <div class='contenedor'>
+      
       <?php
       while ($fila2=mysqli_fetch_assoc($registros2)) {
         $registros3=mysqli_query($link,"select nombre from imagenes where id_producto = '$fila2[id_producto]' and prioridad=1");
