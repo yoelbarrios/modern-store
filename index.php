@@ -48,7 +48,7 @@
         </li>
         <div class="items">
           <li><a href="#"><span class="lnr lnr-home"></span>Inicio</a></li>
-          <li><a href="#"><span class="lnr lnr-briefcase"></span>Productos</a>
+          <li><a href="#"><span class="lnr lnr-store"></span>Productos</a>
             <ul>
               <?php
                 while($fila1=mysqli_fetch_assoc($registros1)){
@@ -60,8 +60,8 @@
               ?>
             </ul>
           </li>
-          <li><a href="#"><span class="lnr lnr-rocket"></span>Cuenta</a></li>
-          <li><a href="#"><span class="lnr lnr-users"></span>Contacto</a></li>
+          <li><a href="#"><span class="lnr lnr-users"></span>Cuenta</a></li>
+          <li><a href="#"><span class="lnr lnr-phone"></span>Contacto</a></li>
         </div>
 
       </ul>
