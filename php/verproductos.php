@@ -3,9 +3,9 @@
     $registros1=mysqli_query($link,"select id, categoria from categorias order by categoria asc");
     //cerrarconexion();
     if(isset($_GET['orden']) && $_GET['orden']=="mayormenor"){
-      $registros2=mysqli_query($link,"select id_producto,nombre, precio from productos where id_categoria='$_GET[id_categoria]' order by precio desc");
+      $registros2=mysqli_query($link,"select * from productos where id_categoria='$_GET[id_categoria]' order by precio desc");
     }else{
-      $registros2=mysqli_query($link,"select id_producto,nombre, precio from productos where id_categoria='$_GET[id_categoria]' order by precio asc");
+      $registros2=mysqli_query($link,"select * from productos where id_categoria='$_GET[id_categoria]' order by precio asc");
     }
     
     //$registros2=mysqli_query($link,"select id_producto,nombre, precio from productos limit 0,12"); para limitar la cantidad de productos
@@ -79,16 +79,16 @@
 
   <!--start main-->
   <section class='verproductos-main'>
-      <p> <?php echo $fila4['categoria']; ?> </p> 
-      <p>
-        <form name="form1">
+      <div class="ruta">
+        <p> <?php echo $fila4['categoria']; ?> </p> 
+        <form name="form1" class="form1">
           <select onChange="fOrdenar('<?php echo $_GET['id_categoria']; ?>')" name="ordenar" class="form-control">
             <option>Ordenar por...</option>
             <option value="menormayor">Ordenar por precio de menor a mayor</option>
             <option value="mayormenor">Ordenar por precio de mayor a menor</option>
           </select>
         </form>
-      </p>
+      </div>
     <!--contenedor principal-->
     <div class='contenedor'>
       
@@ -97,8 +97,9 @@
         $registros3=mysqli_query($link,"select nombre from imagenes where id_producto = '$fila2[id_producto]' and prioridad=1");
         $fila3=mysqli_fetch_assoc($registros3);
       ?>
+      <a class='card' href="detalleproducto.php?id_categoria=<?php echo $fila2['id_categoria']; ?>&id_producto=<?php echo $fila2['id_producto']; ?>">
       <!-- start targeta de producto -->
-      <div class='card'>
+      
         <div class='card-contenido'>
           <div class='top-bar'>
             <span>
@@ -129,8 +130,9 @@
             HEADPHONE
           </div>
         </div>
-      </div>
+      
       <!-- end targeta de producto -->
+      </a>
       <?php
       }
       cerrarconexion();

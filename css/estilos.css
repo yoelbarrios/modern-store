@@ -6,12 +6,12 @@ body {
     color: #333333;
 }
 
+
 /*start header*/
 
 .header {
-    background: linear-gradient(120deg,#552183, #fe648a,#fe8b47 );
+    background: linear-gradient(120deg, #552183, #fe648a, #fe8b47);
     padding: 10px;
-
     box-shadow: 0px 2px 40px 0px rgba(0, 0, 0, 0.091);
     display: flex;
     width: 100%;
@@ -19,11 +19,12 @@ body {
     position: fixed;
     z-index: 1;
 }
-nav{
-  width: 100%;
-  max-width: 1200px;
 
+nav {
+    width: 100%;
+    max-width: 1200px;
 }
+
 nav ul {
     display: flex;
     list-style: none;
@@ -49,7 +50,9 @@ nav ul div.items {
     display: inline-flex;
 }
 
+
 /*separacion de los icos de la letra*/
+
 nav ul div.items span {
     margin-right: 10px;
     color: #522183;
@@ -61,19 +64,20 @@ nav ul div.items a {
     padding: 0 15px;
     color: #fff;
 }
+
 nav ul div.items a:hover {
     color: #522183;
-
 }
+
 nav ul .search-icon {
     height: 40px;
     width: 240px;
-
     display: flex;
     background: #f2f2f2;
     border-radius: 5px;
     border: solid 1px #cecece !important;
 }
+
 nav ul .search-icon input {
     height: 100%;
     width: 200px;
@@ -104,6 +108,7 @@ nav ul .search-icon .icon span {
     color: #fff;
     font-size: 18px;
 }
+
 nav ul .search-icon .icon span:hover {
     color: #522183;
 }
@@ -115,7 +120,6 @@ nav ul li.btn {
 nav ul li.btn span {
     height: 42px;
     width: 42px;
-
     text-align: center;
     line-height: 42px;
     border: 1px solid #cecece;
@@ -128,39 +132,49 @@ nav ul li.btn span.show:before {
     content: '\f00d';
 }
 
-/* start para desplegar las opciones productos*/
-.items li ul{
-  display:none;
-}
-.items li ul li a{
-  color: #567;
 
+/* start para desplegar las opciones productos*/
+
+.items li ul {
+    display: none;
 }
-.items li:hover>ul{
-  display:block;
-  position: absolute;
-  background-color: #fff;
-  padding: 10px;
-  box-shadow: 10px 15px 20px 10px rgba(0, 0, 0, 0.057);
-  z-index: 2;
+
+.items li ul li a {
+    color: #567;
 }
-.items li:hover>ul li:hover{
-  background: linear-gradient(120deg, #fe8b47,#fe648a );
-  cursor: pointer;
+
+.items li:hover>ul {
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 10px 15px 20px 10px rgba(0, 0, 0, 0.057);
+    z-index: 2;
 }
-.items li:hover>ul li a:hover{
-  cursor: pointer;
-  color: #567;
+
+.items li:hover>ul li:hover {
+    background: linear-gradient(120deg, #fe8b47, #fe648a);
+    cursor: pointer;
 }
+
+.items li:hover>ul li a:hover {
+    cursor: pointer;
+    color: #567;
+}
+
+
 /* end para desplegar las opciones*/
+
+
 /*end header*/
 
 
 /* start slider*/
+
 .slider-contenedor {
     max-width: 100%;
     max-height: 100vh;
-    width:960px;
+    width: 960px;
     height: auto;
     position: relative;
     overflow: hidden;
@@ -229,6 +243,7 @@ nav ul li.btn span.show:before {
 
 
 /*start animacion*/
+
 .animacion {
     animation-name: fade;
     animation-duration: 1.5s;
@@ -242,11 +257,16 @@ nav ul li.btn span.show:before {
         opacity: 1;
     }
 }
+
+
 /*end animacion*/
+
+
 /*end slider*/
 
 
 /*star main*/
+
 .titulo {
     text-transform: uppercase;
     text-align: left;
@@ -270,6 +290,7 @@ nav ul li.btn span.show:before {
 }
 
 .card {
+    text-decoration: none;
     position: relative;
     padding: 10px;
     background: white;
@@ -277,6 +298,12 @@ nav ul li.btn span.show:before {
     grid-template-rows: 8fr 1fr 1fr;
     box-shadow: 10px 15px 20px 10px rgba(0, 0, 0, 0.057);
     transition: 0.2s ease-in;
+}
+
+.card:hover {
+    transition: 0.2s ease-in;
+    transform: translateY(-10px);
+    box-shadow: 0px 45px 60px 0px rgba(0, 0, 0, 0.087);
 }
 
 .card-contenido {
@@ -357,15 +384,12 @@ nav ul li.btn span.show:before {
     background: #aaaaaa;
 }
 
-.card:hover {
-    transition: 0.2s ease-in;
-    transform: translateY(-10px);
-    box-shadow: 0px 45px 60px 0px rgba(0, 0, 0, 0.087);
-}
+
 /*end main*/
 
 
 /*start footer*/
+
 footer {
     margin-top: 50px;
     background: #f1f1f1;
@@ -398,16 +422,18 @@ footer {
 .social-media a:hover {
     color: #fca210;
 }
+
+
 /*end footer*/
 
 
 /*start responsive header*/
+
 @media screen and (max-width: 1080px) {
     .header {
         padding: 10px;
         z-index: 1;
         position: fixed;
-
     }
     nav ul li.logo {
         display: none;
@@ -418,19 +444,16 @@ footer {
 }
 
 @media screen and (max-width: 860px) {
-
-  .header {
-      padding: 10px;
-      position: fixed;
-  }
-  nav ul li.btn {
+    .header {
+        padding: 10px;
+        position: fixed;
+    }
+    nav ul li.btn {
         display: flex;
         font-size: 29px;
         flex: 1;
         padding: 0 15% 0 0;
     }
-
-
     nav ul div.items {
         z-index: 1;
         position: fixed;
@@ -458,9 +481,8 @@ footer {
     nav ul div.items li span {
         color: #fff;
     }
-    .items li:hover>ul{
-      background: rgba(0, 0, 0, 0.8);
-
+    .items li:hover>ul {
+        background: rgba(0, 0, 0, 0.8);
     }
     nav ul div.items li:hover>ul li {
         margin: 10px 0;
@@ -485,9 +507,11 @@ footer {
     }
 }
 
+
 /* start responsive slider*/
+
 @media screen and (max-width: 1024px) {
-    .slider-contenedor{
+    .slider-contenedor {
         padding-top: 80px;
     }
     .direcciones {
@@ -496,24 +520,26 @@ footer {
 }
 
 @media screen and (max-width: 950px) {
-    .slider-contenedor{
-      width: 630px;
+    .slider-contenedor {
+        width: 630px;
     }
 }
 
 @media screen and (max-width: 650px) {
-  .slider-contenedor{
-    width: 90%;
-  }
-  .miSlider img {
-
-      height: 40vh;
-
-  }
+    .slider-contenedor {
+        width: 90%;
+    }
+    .miSlider img {
+        height: 40vh;
+    }
 }
+
+
 /*end responsive slider*/
 
+
 /*start responsive main*/
+
 @media screen and (max-width: 1024px) {
     .contenedor {
         grid-template-columns: repeat(3, minmax(170px, 300px));
@@ -534,6 +560,8 @@ footer {
         margin: 10px 30px;
     }
 }
+
+
 /*end responsive main*/
 
 
@@ -553,15 +581,30 @@ footer {
         text-align: center;
     }
 }
+
+
 /*end responsive footer*/
 
+
 /* start ver productos */
+
 .verproductos-main {
     width: 100%;
     padding-top: 80px;
     z-index: 0;
 }
-.verproductos-main .contenedor p{
+
+.verproductos-main .contenedor p {
     font-size: 18px;
-    
+}
+
+.ruta {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.ruta p {
+    color: indigo;
+    font-weight: 400;
+    font-size: 14px;
 }

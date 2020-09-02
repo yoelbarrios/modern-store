@@ -2,7 +2,7 @@
     include('php/conexion.php');
     $registros1=mysqli_query($link,"select id, categoria from categorias order by categoria asc");
     //cerrarconexion();
-    $registros2=mysqli_query($link,"select id_producto,nombre, precio from productos where inicio=1");
+    $registros2=mysqli_query($link,"select * from productos where inicio=1");
     //$registros2=mysqli_query($link,"select id_producto,nombre, precio from productos limit 0,12"); para limitar la cantidad de productos
 ?>
 <!DOCTYPE html>
@@ -101,8 +101,9 @@
         $registros3=mysqli_query($link,"select nombre from imagenes where id_producto = '$fila2[id_producto]' and prioridad=1");
         $fila3=mysqli_fetch_assoc($registros3);
       ?>
+      <a class='card' href="php/detalleproducto.php?id_categoria=<?php echo $fila2['id_categoria']; ?>&id_producto=<?php echo $fila2['id_producto']; ?>">
       <!-- start targeta de producto -->
-      <div class='card'>
+      
         <div class='card-contenido'>
           <div class='top-bar'>
             <span>
@@ -133,8 +134,9 @@
             HEADPHONE
           </div>
         </div>
-      </div>
+      
       <!-- end targeta de producto -->
+      </a>
       <?php
       }
       cerrarconexion();
