@@ -608,3 +608,30 @@ footer {
     font-weight: 400;
     font-size: 14px;
 }
+
+
+/*estilos de buscardor.php */
+
+.sin-resultados {
+    padding: 10px;
+    max-width: 960px;
+    margin: 0 auto;
+    background: #f2f2f2;
+}
+
+.mensaje-uno {
+    font-size: 22px;
+    font-style: bold;
+}
+
+.sin-resultados-dos {
+    padding: 20px 10px 10px 10px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.mensaje-dos {
+    font-size: 18px;
+    font-style: bold;
+    color: #000;
+}

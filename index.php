@@ -40,12 +40,12 @@
       <ul>
         <li class="logo"><a href="#"><strong>Yoel </strong>Code</a> </li>
         <li class="btn"><span class="fas fa-bars"></span></li>
-          <li class="search-icon">
-          <input type="search" placeholder="Buscar Producto">
-          <label class="icon">
-            <span class="fas fa-search"></span>
-          </label>
-        </li>
+          <form class="search-icon" action="php/buscador.php" method="Post">
+            <input type="search" placeholder="Buscar Producto" name="buscar">
+            <button type="submit" class="icon">
+              <span class="fas fa-search"></span>
+            </button>
+          </form>
         <div class="items">
           <li><a href="#"><span class="lnr lnr-home"></span>Inicio</a></li>
           <li><a href="#"><span class="lnr lnr-store"></span>Productos</a>
