@@ -69,8 +69,8 @@
                             ?>
                         </ul>
                     </li>
-                    <li><a href="#"><span class="lnr lnr-users"></span>Cuenta</a></li>
-                    <li><a href="#"><span class="lnr lnr-phone"></span>Contacto</a></li>
+                    <li><a href="../clientes/formregistroclientes.php"><span class="lnr lnr-users"></span>Registrate</a></li>
+                    <li><a href="#"><span class="lnr lnr-user"></span>Ingresar</a></li>
                 </div>
 
             </ul>

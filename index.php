@@ -18,7 +18,7 @@
   <!--start bootstrap-->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-  
+  <link rel="stylesheet" href="css/alerts.css">
   <!--end bootstrap-->
   <!--fuentes-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:200,400">
@@ -34,6 +34,7 @@
 </head>
 
 <body>
+  
   <!--start header-->
   <header class="header">
     <nav>
@@ -60,15 +61,31 @@
               ?>
             </ul>
           </li>
-          <li><a href="#"><span class="lnr lnr-users"></span>Cuenta</a></li>
-          <li><a href="#"><span class="lnr lnr-phone"></span>Contacto</a></li>
+          <li><a href="clientes/formregistroclientes.php"><span class="lnr lnr-users"></span>Registrate</a></li>
+          <li><a href="#"><span class="lnr lnr-user"></span>Ingresar</a></li>
         </div>
 
       </ul>
     </nav>
   </header>
   <!--end header-->
-
+  <?php 
+    if(isset($_GET['alert']) && $_GET['alert']=='validado'){
+  ?>  
+     <!--start alert-->
+            <div id="" class="contenedor-alert ">
+                <div class="msg-alert" id="msg-alert">
+                    <span class="fas fa-exclamation-circle"></span>
+                    <span class="msg">Verificación correcta ya puede iniciar a comprar</span>
+                    <div id="close-btn" class="close-btn">
+                        <span class="fas fa-times"></span>
+                    </div>
+                </div>
+            </div>
+      <!--end alert--> 
+  <?php
+    }
+  ?>
   <!-- start slider -->
   <section class="slider-contenedor">
         <div class="miSlider animacion">

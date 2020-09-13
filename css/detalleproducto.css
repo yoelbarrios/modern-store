@@ -83,12 +83,23 @@
 }
 
 .comprar .btn-comprar {
-    background: purple;
-    color: #fff;
-    width: 80%;
-    font-size: 20px;
+    display: block;
+    width: 50%;
+    height: 50px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
+    background: linear-gradient(120deg, #fe648a, #fe8b47);
+    background-size: 200%;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+    font-size: 18px;
+    margin: 10px auto;
+}
+
+.comprar .btn-comprar:hover {
+    background: linear-gradient(120deg, #fe648a, #552183);
 }
 
 .contenedor-two {
