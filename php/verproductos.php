@@ -1,7 +1,6 @@
 <?php
     include('conexion.php');
     $registros1=mysqli_query($link,"select id, categoria from categorias order by categoria asc");
-    //cerrarconexion();
     if(isset($_GET['orden']) && $_GET['orden']=="mayormenor"){
       $registros2=mysqli_query($link,"select * from productos where id_categoria='$_GET[id_categoria]' order by precio desc");
     }else{
@@ -23,8 +22,7 @@
   <link rel="stylesheet" href="../css/estilos.css">
   <link rel="stylesheet" href="../css/normalizar.css">
   <!--start bootstrap-->
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+  
   
   <!--end bootstrap-->
   <!--fuentes-->
@@ -34,7 +32,7 @@
   <script src="https://kit.fontawesome.com/b478cabd51.js" crossorigin="anonymous"></script>
   <!--jquery-->
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
+  
   <!--script header-->
   <script type="text/javascript" src="../js/header.js"></script>
   <script src="../js/ordenar.js"></script>

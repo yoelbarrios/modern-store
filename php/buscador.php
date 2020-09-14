@@ -20,11 +20,6 @@
     <link rel="stylesheet" href="../css/estilos.css">
     <link rel="stylesheet" href="../css/detalleproducto.css">
     <link rel="stylesheet" href="../css/normalizar.css">
-    <!--start bootstrap-->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
-
-    <!--end bootstrap-->
     <!--fuentes-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:200,400">
     <!--iconos-->
@@ -32,7 +27,7 @@
     <script src="https://kit.fontawesome.com/b478cabd51.js" crossorigin="anonymous"></script>
     <!--jquery-->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
+   
     <!--script header-->
     <script type="text/javascript" src="../js/header.js"></script>
 
@@ -249,8 +244,7 @@
                         </div>
                         </div>
                     
-                    <!-- end ta
-                    rgeta de producto -->
+                    <!-- end targeta de producto -->
                     </a>
             <?php
             }

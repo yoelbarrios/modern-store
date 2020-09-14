@@ -1,7 +1,6 @@
 <?php
     include('php/conexion.php');
     $registros1=mysqli_query($link,"select id, categoria from categorias order by categoria asc");
-    //cerrarconexion();
     $registros2=mysqli_query($link,"select * from productos where inicio=1");
     //$registros2=mysqli_query($link,"select id_producto,nombre, precio from productos limit 0,12"); para limitar la cantidad de productos
 ?>
@@ -15,11 +14,8 @@
   <!--start estilos propios-->
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/normalizar.css">
-  <!--start bootstrap-->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="css/alerts.css">
-  <!--end bootstrap-->
+  
   <!--fuentes-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:200,400">
   <!--iconos-->
@@ -27,7 +23,7 @@
   <script src="https://kit.fontawesome.com/b478cabd51.js" crossorigin="anonymous"></script>
   <!--jquery-->
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  
   <!--script header-->
   <script type="text/javascript" src="js/header.js"></script>
 
@@ -74,12 +70,9 @@
   ?>  
      <!--start alert-->
             <div id="" class="contenedor-alert ">
-                <div class="msg-alert" id="msg-alert">
-                    <span class="fas fa-exclamation-circle"></span>
-                    <span class="msg">Verificación correcta ya puede iniciar a comprar</span>
-                    <div id="close-btn" class="close-btn">
-                        <span class="fas fa-times"></span>
-                    </div>
+                <div class="msg-alert-success" id="msg-alert">
+                    <span class="fas fa-check-circle"></span>
+                    <span class="msg-success">Verificación correcta ya puede iniciar a comprar</span>
                 </div>
             </div>
       <!--end alert--> 

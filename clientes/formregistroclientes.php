@@ -2,7 +2,6 @@
     
     include('../php/conexion.php');
     $registros1=mysqli_query($link,"select id, categoria from categorias order by categoria asc");
-    //cerrarconexion();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -14,11 +13,7 @@
     <!--start estilos propios-->
     <link rel="stylesheet" href="../css/estilos.css">
     <link rel="stylesheet" href="../css/normalizar.css">
-    <!--start bootstrap-->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="clientes.css">
-    <!--end bootstrap-->
     <!--fuentes-->
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400;500&display=swap" rel="stylesheet">
     <!--iconos-->
@@ -26,7 +21,6 @@
     <script src="https://kit.fontawesome.com/b478cabd51.js" crossorigin="anonymous"></script>
     <!--jquery-->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
     <!--script header-->
     <script type="text/javascript" src="../js/header.js"></script>
     <script src="../js/ordenar.js"></script>
@@ -122,10 +116,10 @@
             </div>
             <!--end alert-->
             <div id="contenedorAlertExito" class="contenedor-alert ">
-                <div class="msg-alert" id="msg-alert">
-                    <span class="fas fa-exclamation-circle"></span>
-                    <span class="msg">Registro completo</span>
-                    <div id="close-btn-exito" class="close-btn">
+                <div class="msg-alert-success" id="msg-alert">
+                    <span class="fas fa-check-circle"></span>
+                    <span class="msg-success">Registro completo</span>
+                    <div id="close-btn-exito" class="close-btn-success">
                         <span class="fas fa-times"></span>
                     </div>
                 </div>
@@ -136,11 +130,11 @@
             <?php 
             if(isset($_GET['alert']) && $_GET['alert']=='enlacecaducado'){
             ?>
-            <div id="" class="contenedor-alert-enlacecaducado">
-                <div class="msg-alert" id="msg-alert">
+            <div id="enlacerepetido" class="contenedor-alert-enlacecaducado">
+                <div class="msg-alert3" id="msg-alert">
                     <span class="fas fa-exclamation-circle"></span>
                     <span class="msg3">El tiempo para validar su correo ha caducado, por favor vuelva a registrarse</span>
-                    <div id="close-btn" class="close-btn">
+                    <div id="close-btn-enlacerepetido" class="close-btn">
                         <span class="fas fa-times"></span>
                     </div>
                 </div>

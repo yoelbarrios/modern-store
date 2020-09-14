@@ -25,6 +25,16 @@ function validarformulario() {
     } else {
         mensaje.style.display = 'none';
     }
+    if (correo.value == "") {
+        mensaje.style.display = 'block';
+    } else {
+        mensaje.style.display = 'none';
+    }
+    if (password.value == "") {
+        mensaje.style.display = 'block';
+    } else {
+        mensaje.style.display = 'none';
+    }
 
     function validadocorreo() {
         if (!regexEmail.test(correo.value)) {
@@ -134,4 +144,8 @@ $('#close-btn-repetido').click(function() {
 $('#close-btn-exito').click(function() {
 
     $('#contenedorAlertExito').hide('fast');
+});
+$('#close-btn-enlacerepetido').click(function() {
+
+    $('#enlacerepetido').hide('fast');
 });
